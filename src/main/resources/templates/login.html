@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="parts/header :: header"/>
+<body class="bg-light">
+<nav th:replace="parts/navbar :: navbar"/>
+<!--BEGIN HIER MET NIEUWE TEMPLATE-->
+
+<!--login start-->
+<section id="login">
+    <div class="container">
+        <h2 class="pb-5 text-center">Login met uw gebruikersnaam en wachtwoord</h2>
+        <div class="form-wrapper mx-auto">
+            <form action="#" th:action="@{do_login}" method="post" onsubmit=" return validationError()" name="loginForm" >
+                <table id="login-form"class="table">
+                    <colgroup>
+                        <col span="1">
+                        <col span="1">
+                        <col span="1">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td class="first-row"><i class=" fas fa-key fa-2x text-muted"></i></td>
+                        <td class="first-row"></i>Gebruikersnaam:</td>
+                        <td class="first-row"><input class="register-form-input" type="text" name="user_name"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp</td>
+                        <td>Wachtwoord:</td>
+                        <td><input class="register-form-input" type="password" name="user_password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-secondary my-2 my-sm-0" type="submit" value="Inloggen">Registreren</button></td>
+                        <td class="td-right-align"><a href="#"><button class="btn btn-primary my-2 my-sm-0 text-align-right" type="submit" value="Inloggen">Inloggen</button></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+            <span th:text="${login_error}" class="validate-error"/>
+        </div></div>
+</section>
+
+
+
+<!--NIEUWE TEMPLATE TOT HIER-->
+<footer th:replace="parts/footer :: footer"/>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

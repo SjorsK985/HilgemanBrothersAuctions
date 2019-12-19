@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.thymeleaf.org">
+<head th:replace="parts/header :: header"/>
+<body class="bg-light">
+<nav th:replace="parts/navbar :: navbar"/>
+<!--BEGIN HIER MET NIEUWE TEMPLATE-->
+
+<section id="search-lots" class="text-center my-5">
+    <h2 class="">Zoek meteen in 40.000 kavels</h2>
+    <form class="d-flex justify-content-center align-items-center" action="#">
+        <input type="search">&nbsp&nbsp<i class="fas fa-search fa-3x"></i>
+    </form>
+</section>
+
+<!--closing-lots start-->
+<section id="closing-lots">
+    <div class="container">
+        <h2 class="my-5 text-underline text-primary"></u><i class="fas fa-clock"></i>&nbsp<u>DEZE KAVELS SLUITEN NU</u></h2>
+        <div class="card-deck">
+            <div class="card">
+                <img src="img/photos/tractor2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">John Deer Trekker WD-760</h5>
+                    <p class="card-text"><em>Markelo, Nederland</em><i class="fas fa-map-marked fa-lg ml-4"></i></p>
+                    <p class="card-text">Goed onderhouden John Deer Trekker, type WD-760, bouwjaar 2009 inclusief weidesleep. Zonder exportpapieren maar met onderhoudsboekje.<a href="#"><i class="fas fa-info-circle"></i></a></p>
+                    <br/>
+                    <h6 class="card-title">Huidig bod:</h6>
+                    <p class="lead"> € 22.000    &nbsp <span class="text-small">bieder 2765428 </span><image src="img/flagicons/france.svg" class="display-inline" height="20px"/></p>
+                    <a href="#"><button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-gavel"></i> Bied mee</button></a>
+                </div>
+                <div class="card-footer">
+                    <p class="text-muted">Kavel sluit in <span class="text-danger">03:12:05</span></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/photos/drill1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Bovenfrees Metabo 34</h5>
+                    <p class="card-text"><em>Turnhout, België</em><i class="fas fa-map-marked fa-lg ml-4"></i></p>
+                    <p class="card-text">Bovenfrees Metabo 34, 3000 toeren, kopbreedte 20-500 mm, inclusief freestafel. <a href="#"><i class="fas fa-info-circle"></i></a></p><br/>
+                    <br />
+                    <h6 class="card-title">Huidig bod:</h6>
+                    <p class="lead"> € 2.000    &nbsp <span class="text-small">bieder 1865429 </span><image src="img/flagicons/belgium.svg" class="display-inline" height="20px"/></p>
+                    <a href="#"><button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-gavel"></i> Bied mee</button></a>
+                </div>
+                <div class="card-footer">
+                    <p class="text-muted">Kavel sluit over 6 minuten</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/photos/bulldozer1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Caterpillar Bulldozer EE-7</h5>
+                    <p class="card-text"><em>Poznan, Polen</em><i class="fas fa-map-marked fa-lg ml-4"></i></p>
+                    <p class="card-text">Mooie Caterpillar Bulldozer, slechts 1000 werkuren, van een oud vrouwtje geweest en altijd binnen gestaan.<a href="#"> <i class="fas fa-info-circle"></i></a></p><br/>
+                    <h6 class="card-title">Huidig bod:</h6>
+                    <p class="lead"> € 12.000    &nbsp <span class="text-small">bieder 8825929 </span><image src="img/flagicons/portugal.svg" class="display-inline" height="20px"/></p>
+                    <a href="#"><button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-gavel"></i> Bied mee</button></a>
+                </div>
+                <div class="card-footer">
+                    <p class="text-muted">Kavel sluit over 12 minuten</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!--NIEUWE TEMPLATE TOT HIER-->
+<footer th:replace="parts/footer :: footer"/>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
