@@ -1,41 +1,51 @@
 package hva.miw.cohort17.hilgemanauctions.model;
-
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userID;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
 
+    private int userID;
     private String email;
     private String password;
-    private String firstName;
-    private String prepositions;
-    private String lastName;
+    private LocalDate dateOfRegistration;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Bankaccount bankaccount;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Lot> lotsForSale;
 
-    @ManyToMany
-    private List<Lot> lotsWon;
+    @OneToMany
+    private List<Lot> savedItems;
 
     public User(){
         super();
     }
 
-    public User(String email, String password, String firstName, String prepositions, String lastName){
+    public User(String email, String password, Address address, Bankaccount bankaccount){
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
-        this.prepositions = prepositions;
-        this.lastName = lastName;
-        this.address = new Address();
-        this.lotsWon = new ArrayList<>();
+        this.address = address;
+        this.dateOfRegistration = LocalDate.now();
+        this.bankaccount = bankaccount;
+        this.lotsForSale = new ArrayList<>();
+        this.savedItems = new ArrayList<>();
+    }
+
+    public User(String email, String password, Bankaccount bankaccount){
+        this(email, password, new Address(), bankaccount);
+    }
+
+    public void addLotToSell(Lot lot){
+        lotsForSale.add(lot);
     }
 
     public int getUserID() {
@@ -62,28 +72,20 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public LocalDate getDateOfRegistration() {
+        return dateOfRegistration;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setDateOfRegistration(LocalDate dateOfRegistration) {
+        this.dateOfRegistration = dateOfRegistration;
     }
 
-    public String getPrepositions() {
-        return prepositions;
+    public Bankaccount getBankaccount() {
+        return bankaccount;
     }
 
-    public void setPrepositions(String prepositions) {
-        this.prepositions = prepositions;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setBankaccount(Bankaccount bankaccount) {
+        this.bankaccount = bankaccount;
     }
 
     public Address getAddress() {
@@ -92,5 +94,21 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Lot> getLotsForSale() {
+        return lotsForSale;
+    }
+
+    public void setLotsForSale(List<Lot> lotsForSale) {
+        this.lotsForSale = lotsForSale;
+    }
+
+    public List<Lot> getSavedItems() {
+        return savedItems;
+    }
+
+    public void setSavedItems(List<Lot> savedItems) {
+        this.savedItems = savedItems;
     }
 }

@@ -60,3 +60,111 @@ th.subject{
 .td-right-align{
     text-align: right;
 }
+
+.validate-error{
+    color:red;
+}
+
+
+.validate-ok{
+    color: #28a745!important;
+}
+
+.validate-field-error{
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.validate-field-ok{
+    background-color: rgba(0, 255, 0, 0.4);
+}
+
+button[disabled=disabled], button:disabled {
+    cursor: not-allowed;
+    background-color: rgba(237, 108, 57, 0.4)!important;
+    border-color: rgba(237, 108, 57, 0.4)!important;
+}
+
+/*Own stylings*/
+.hidden{
+    display: none;
+}
+.rounded{
+    border-radius: .5rem!important;
+}
+
+.form-wrapper{
+    width: 80%;
+    padding: 2rem 2rem;
+    border-radius: .5rem;
+    background-color: #e9ecef;
+}
+
+.first-row{
+    border-top: none !important;
+}
+
+table{
+    table-layout:fixed;
+}
+
+#register-form tr > *:nth-child(1) { width:10%; }
+#register-form tr > *:nth-child(2) { width:30%; }
+#register-form tr > *:nth-child(3) { width:60%; }
+
+th.from, th.date {
+    width: 10%;
+}
+th.subject{
+    width: 70%;
+}
+
+.register-form-input{
+    width: 80%;
+}
+
+select{
+    width: 80%;
+}
+
+.table tbody+tbody{
+    border-top: none;
+}
+
+#new-rekening-table tr > *:nth-child(1) { width:30%; }
+#new-rekening-table tr > *:nth-child(2) { width:40%; }
+#new-rekening-table tr > *:nth-child(3) { width:30%; }
+
+#overzicht-rekening-table tr > *:nth-child(1) { width:30%; }
+#overzicht-rekening-table tr > *:nth-child(2) { width:45%; }
+#overzicht-rekening-table tr > *:nth-child(3) { width:25%; }
+
+.table-row-link td a {
+    display: block;
+    color: black!important;
+}
+
+.table-row-link td a:link {
+    color: black!important;
+}
+.table-row-link:hover {
+    background: #666363!important;
+    color: white!important;
+}
+
+.table-row-link td a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+table th{
+    font-weight: bold;
+}
+
+.cancel-link:link{
+    text-decoration: underline;
+    color: #6C757D;
+}
+
+.cancel-link:hover {
+    color: #343a40 !important;
+}

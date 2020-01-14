@@ -16,8 +16,9 @@ public class Address {
     private int houseNumber;
     private String postcode;
     private String city;
+    private String country;
 
-    public Address(String street, int houseNumber, String postcode, String city){
+    public Address(String street, int houseNumber, String postcode, String city, String country){
         super();
         this.street = street;
         this.houseNumber = houseNumber;
@@ -31,6 +32,15 @@ public class Address {
         this.houseNumber = 0;
         this.postcode = "onbekend";
         this.city = "onbekend";
+        this.country = "onbekend";
+    }
+
+    public int getAddressID() {
+        return addressID;
+    }
+
+    public void setAddressID(int addressID) {
+        this.addressID = addressID;
     }
 
     public String getStreet() {
@@ -63,5 +73,13 @@ public class Address {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

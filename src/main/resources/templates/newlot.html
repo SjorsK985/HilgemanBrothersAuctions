@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="parts/header :: header"/>
+<body class="bg-light">
+<nav th:replace="parts/navbar :: navbar"/>
+<!--BEGIN HIER MET NIEUWE TEMPLATE-->
+
+<section id="newlot">
+
+<div class="container">
+    <h2 class="my-5 text-center">Voeg een nieuw kavel toe om te veilen: </h2>
+    <div class="form-wrapper mx-auto">
+        <form action="#" th:action = "@{add_newlot}" method="POST">
+            <table id="newlot-form" class="table">
+                <colgroup>
+                    <col span="1">
+                    <col span="1">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td class="first-row">Categorie:</td>
+                    <td class="first-row"><input class="register-form-input" type="text" name="lot-category" id="lot-category-field"></td>
+                </tr>
+                <tr>
+                    <td class="">Merk:</td>
+                    <td class=""><input class="register-form-input" type="text" name="lot-brand" id="lot-brand-field"></td>
+                </tr>
+                <tr>
+                    <td class="">Type:</td>
+                    <td class=""><input class="register-form-input" type="text" name="lot-type" id="lot-type-field"></td>
+                </tr>
+                <tr>
+                    <td class="">Model:</td>
+                    <td class=""><input class="register-form-input" type="text" name="lot-model" id="lot-model-field"></td>
+                </tr>
+                <tr>
+                    <td class="">Description:</td>
+                    <td class=""><input class="register-form-input" type="text" name="lot-description" id="lot-description-field"></td>
+                </tr>
+                <tr>
+                    <td class="">Voeg een afbeelding toe:</td>
+                    <td class=""><input class="register-form-input" type="file" name="lot-image" id="lot-image-field"></td>
+                </tr>
+                <tr>
+                    <td class="first-row"><a href="personalpage" class="text-muted cancel-link">Annuleren</a></td>
+                    <td class="first-row"><input class="btn btn-primary my-5 my-sm-0" type="submit" value="Voeg toe"></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+
+        </form>
+</div>
+
+</section>
+
+
+
+<!--NIEUWE TEMPLATE TOT HIER-->
+<footer th:replace="parts/footer :: footer"/>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

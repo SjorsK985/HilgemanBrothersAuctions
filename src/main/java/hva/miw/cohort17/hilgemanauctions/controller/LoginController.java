@@ -5,6 +5,7 @@ import net.bytebuddy.implementation.auxiliary.AuxiliaryType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -15,6 +16,11 @@ public class LoginController {
 
     @Autowired
     private LoginService loginService;
+
+    @GetMapping("login")
+    public String loginHandler() {
+        return "login";
+    }
 
     @PostMapping("do_login")
     private String doLoginHandler(@RequestParam(name = "user_name") String email,

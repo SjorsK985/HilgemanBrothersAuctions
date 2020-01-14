@@ -4,15 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-    @GetMapping("login")
-    public String loginHandler() {
-        return "login";
-    }
-
-    @GetMapping("register")
-    public String registerHandler(){
-        return "register";
-    }
 
     @GetMapping("index")
     public String indexHandler(){
