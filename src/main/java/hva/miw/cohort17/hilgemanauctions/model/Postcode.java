@@ -1,4 +1,4 @@
 package hva.miw.cohort17.hilgemanauctions.model;
 
-public class User {
+public class Postcode {
 }

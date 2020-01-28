@@ -1,4 +1,6 @@
 package hva.miw.cohort17.hilgemanauctions.model;
 
-public class User {
+public enum Rol {
+    PRIVATE,
+    COMPANY,
 }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="parts/header :: header"/>
+<body class="bg-light">
+<nav th:replace="parts/navbar :: navbar"/>
+<!--BEGIN HIER MET NIEUWE TEMPLATE-->
+<!--registerform start-->
+<section id="edit-user">
+    <div class="container">
+        <h2 id="register-welcome" class="text-center py-5">Bewerk u profiel</h2>
+
+        <div class="form-wrapper mx-auto">
+            <form action="#" th:action = "@{do_register}" method="post" th:object="${Gender}">
+                <div class="text-center">
+                    <input type="radio" class="accountradio" name="accounttype_radio" value="particulier" checked><label class="mx-2">Particulier</label>
+                    <input type="radio" class="accountradio" name="accounttype_radio" value="bedrijf"><label class="mx-2">Zakelijk</label>
+                </div>
+                <table id="register-form"class="table">
+                    <colgroup>
+                        <col span="1">
+                        <col span="1">
+                        <col span="1">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td class="first-row"></td>
+                        <td class="first-row">&nbsp</td>
+                        <td class="first-row">&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="first-row"><i class=" fas fa-key fa-2x text-muted"></i></td>
+                        <td class="first-row"></i>Emailadres:</td>
+                        <td class="first-row"><input class="register-form-input" type="email" name="user_email" id="email-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Wachtwoord:</td>
+                        <td><input class="register-form-input" type="password" name="password" id="password-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Bevestig wachtwoord:</td>
+                        <td><input class="register-form-input" type="password" name="passwordconfirm" id="passwordconfirm-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td>Banknummer:</td>
+                        <td><input class="register-form-input" type="text" name="bankaccount" id="bsn-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                    </tr>
+                    <tbody id="private-register-fields">
+                    <tr class="private-info">
+                        <td class="first-row"><i class="fas fa-person fa-2x text-muted"></i></td>
+                        <td class="first-row">Aanhef:</td>
+                        <td class="first-row">
+
+                            <select name="gender">
+                                <option th:each="genderOpt : ${T(hva.miw.cohort17.hilgemanauctions.model.Gender).values()}"
+                                        th:value="${genderOpt}" th:text="${genderOpt.name}"></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="private-info">
+                        <td></td>
+                        <td>Voornaam:</td>
+                        <td><input class="register-form-input" type="text" name="first_name" id="firstname-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td>Tussenvoegsels:</td>
+                        <td><input class="register-form-input" type="text" name="prepositions" id="prepositions-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Achternaam:</td>
+                        <td><input class="register-form-input" type="text" name="last_name" id="lastname-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td class="first-row">Geboortedatum:</td>
+                        <td class="first-row"><input class="register-form-input" type="date" name="dob" id="birthdate-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                    </tr>
+                    </tbody>
+                    <tbody class="d-none first-row" id="company-register-fields">
+                    <tr>
+                        <td class="first-row"><i class="fas fa-person-tie fa-2x text-muted"></i></td>
+                        <td class="first-row">Bedrijfsnaam:</td>
+                        <td class="first-row"><input class="register-form-input" type="text" name="company_name" id="companyname-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td>Segment:</td>
+                        <td>
+                            <select name="sector">
+                                <option th:each="sectorOpt : ${T(hva.miw.cohort17.hilgemanauctions.model.Sector).values()}"
+                                        th:value="${sectorOpt}" th:text="${sectorOpt.name}"></option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <td class="first-row"><i id="address-icon" class="fas fa-home fa-2x text-muted"></i></td>
+                        <td class="first-row">Postcode:</td>
+                        <td class="first-row"><input class="register-form-input" type="text" name="postcode" id="postcode-field-reg"><i class="fas fa-lg ml-3 hidden"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td>Huisnummer:</td>
+                        <td><input class="register-form-input" type="text" name="house_number" id="housenumber-field-reg"><i class="fas fa-lg ml-3 hidden"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Straat:</td>
+                        <td><input class="register-form-input text-uppercase" type="text" name="street" id="street-field-reg"><i class="fas fa-lg ml-3 hidden"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="register-field-city">Woonplaats:</td>
+                        <td><input class="register-form-input text-uppercase" type="text" name="city" id="city-field-reg"><i class="fas fa-lg ml-3 hidden"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td class="first-row"><i class="fas fa-phone-alt fa-2x text-muted"></i></td>
+                        <td class="first-row">Telefoonnummer:</td>
+                        <td class="first-row"><input class="register-form-input" type="text" name="telephone" id="phone-field-reg"><i class="fas fa-lg ml-3 hidden"></i></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+
+                        <td>&nbsp</td>
+                        <td>&nbsp</td>
+                    </tr>
+
+                    <tr>
+                        <td class="first-row"><i class="fas fa-clipboard-check fa-2x text-muted"></i></i></td>
+
+                        <td class="first-row">Ik ga akkoord met de algemene voorwaarden</td>
+                        <td class="first-row"><input type="checkbox" name="agree" id="agree-field-reg"><i class="fas fa-lg ml-3 hidden"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><a href="#"><button class="btn btn-primary my-2 my-sm-0" type="submit" id="do-register">Registreer</button></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</section><!--registerform end-->
+
+
+
+
+<!--NIEUWE TEMPLATE TOT HIER-->
+<footer th:replace="parts/footer :: footer"/>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

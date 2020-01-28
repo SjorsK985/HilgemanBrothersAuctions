@@ -1,0 +1,18 @@
+<div th:fragment="favouritelotcard" class="col-sm-6 col-lg-3 mb-3" th:each="lot : ${portfolio.favourtitelots}">
+    <div class="card mb-3 h-100" >
+        <img class="card-img-top" th:src="@{${lot.photo.url}}" alt="Card image cap" width="200px" height="150px">
+        <div class="card-img-overlay">
+            <h4 class="card-title text-white shadow" th:text="|${lot.brand} ${lot.type} ${lot.yearOfManufacture}|"></h4>
+        </div>
+        <div class="card-body">
+            <p class="card-text" th:text="|${lot.description}|"></p>
+            <p class="card-text font-weight bold">Startbedrag: <span th:text="${lot.startingBid}"/></p>
+        </div><!--card-body-->
+        <div class="card-footer">
+            <small class="text-muted">Kavel sluit op: <span th:text="${lot.closingDate}"></span></small>
+            <div class="d-flex justify-content-between">
+                <a th:href="@{/removelot(id=${lot.lotID})}" class="card-link"><i class="fas fa-trash-alt mr-2"></i>Kavel ontvolgen</a>
+            </div>
+        </div><!--card-footer-->
+    </div><!--card-->
+</div>
